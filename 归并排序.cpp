@@ -1,4 +1,7 @@
+//待修复，merge()函数故障无法输出
+
 #include<stdio.h>
+#include<stdlib.h>
 
 void merge(int arr[],int low,int mid,int high){
 	//将两个数组中有序子表归并为一个有序表
@@ -8,11 +11,11 @@ void merge(int arr[],int low,int mid,int high){
 	int n2 = high - mid;//后子表长度
 	//将子表暂存在这两个数组中
 	int L[n1],R[n2];
-	for (int i = 0; i < n1; ++i)
+	for (i = 0; i < n1; ++i)
 	{
 		L[i] = arr[low + i];
 	}
-	for (int j = 0; j < n2; ++i)
+	for (j = 0; j < n2; ++i)
 	{
 		R[j] = arr[mid + 1 +j];
 	}
@@ -45,19 +48,54 @@ void merge(int arr[],int low,int mid,int high){
 void mergeSort(int arr[],int low,int high){
 	if (low < high)
 	{
+				printf("la\n");
 		int mid = (low + high)/2;
 		mergeSort(arr,low,mid);
+		printf("pa\n");
 		mergeSort(arr,mid+1,high);
+			printf("papapa\n");
 		merge(arr,low,mid,high);
+		printf("lalala\n");
 	}
 }
 
 
 
 
+int* getArray(int n){
+	int *a;
+	a = (int*)malloc(n*sizeof(int));
+	int i;
+	for (i = 0; i < n; ++i)
+	{
+		scanf("%d",&a[i]);
+	}
+	return a;
+}
+
+void showArray(int a[],int n){
+	int i;
+	for (i = 0; i < n; ++i)
+	{
+		printf("%d ",a[i]);
+	}
+	printf("\n");
+}
+
+
 
 int main(int argc, char const *argv[])
 {
-	
+	int n;
+	scanf("%d",&n);
+	int *a;
+	a = getArray(n);
+	showArray(a,n);
+
+	mergeSort(a,0,n-1);
+
+	showArray(a,n);
+
+	free(a);
 	return 0;
 }
