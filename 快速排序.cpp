@@ -28,18 +28,18 @@ void quickSort(int a[],int low,int high){
 	int temp;
 	if (i<j)
 	{
-		temp = a[low];//设置基准值（首元素）
+		temp = a[low];//设置基准值（首元素）temp
 		while(i<j){
-			//用条件来移动指针
-			while(j>i && a[j]>=temp){
+			//用条件来移动指针，先j后i,后找小前找大
+			while(i<j && a[j]>=temp){
 				j--;
 			}
-			if (i<j)
+			if (i<j)//找到某个a[j]<temp
 			{	
 				a[i] = a[j];
 				i++;
 			}
-			while(j>i && a[i]<temp){
+			while(i<j && a[i]<temp){
 				i++;
 			}
 			if (i<j)
@@ -48,7 +48,7 @@ void quickSort(int a[],int low,int high){
 				j--;
 			}
 		}	
-		a[i] = temp;//此时的i=j
+		a[i] = temp;//此时的i=j，temp值的位置已经确定
 		quickSort(a,low,i-1);
 		quickSort(a,i+1,high);
 	}

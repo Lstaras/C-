@@ -33,13 +33,14 @@ int main(int argc, char const *argv[])
 	int temp;
 	for (i = 1; i < n; ++i)
 	{
-		temp = a[i];
+		temp = a[i];//目标值存在temp中
 		j = i-1;//当前元素的前一个元素
-		while(temp<a[j] && j>=0){//已排序部分为有序，故只需要关注首个无序元素
+		//已排序部分为有序，故只需要关注首个无序元素,其他元素后移即可
+		while(temp<a[j] && j>=0){
 			a[j+1] = a[j];//元素后移一位
 			j--;
 		}
-		a[j+1] = temp;
+		a[j+1] = temp;//存入正确的位置
 	}
 
 	showArray(a,n);
