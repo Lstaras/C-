@@ -1,5 +1,5 @@
 #include<stdio.h>
-//ÅĞ¶ÏËØÊı
+//?????
 int isPrime(int x);
 
 int main()
@@ -8,10 +8,10 @@ int main()
 	scanf("%d",&x);
 	if(isPrime(x)==1)
 	{
-		printf("%dÊÇËØÊı",x);
+		printf("%dæ˜¯ç´ æ•°",x);
 	}else
 	{
-		printf("%d²»ÊÇËØÊı",x);
+		printf("%dä¸æ˜¯ç´ æ•°",x);
 	}
 	printf("\n");
 	return 0;
@@ -20,7 +20,7 @@ int main()
 int isPrime(int x)
 {
 	int flag = 1;
-	if(x==1||(x!=2&&x%2==0))
+	if(x==1||(x!=2&&x%2==0))//æ’é™¤1ã€ä¸ä¸º2çš„å¶æ•°
 	{
 		flag = 0;
 	}
