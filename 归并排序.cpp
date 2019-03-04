@@ -1,5 +1,3 @@
-//待修复，merge()函数故障无法输出
-
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -10,15 +8,19 @@ void merge(int arr[],int low,int mid,int high){
 	int n1 = mid - low + 1;//前子表长度
 	int n2 = high - mid;//后子表长度
 	//将子表暂存在这两个数组中
-	int L[n1],R[n2];
+	int *L;
+	int *R;
+	L = (int*)malloc(n1*sizeof(int));
+	R = (int*)malloc(n2*sizeof(int));
 	for (i = 0; i < n1; ++i)
 	{
 		L[i] = arr[low + i];
 	}
-	for (j = 0; j < n2; ++i)
+	for (j = 0; j < n2; ++j)
 	{
 		R[j] = arr[mid + 1 +j];
 	}
+	//printf("oooo\n");
 
 	//归并的关键过程
 	i = 0;//L、R均从头开始遍历
@@ -43,19 +45,21 @@ void merge(int arr[],int low,int mid,int high){
 	while(j < n2){
 		arr[k++] = R[j++];
 	}
+	free(L);
+	free(R);
 }//merge在归并的最底层是大材小用（只起到单个大小交换），但是在最高层却是两大有序表的归并，故要考虑到各种情况
 
 void mergeSort(int arr[],int low,int high){
 	if (low < high)
 	{
-				printf("la\n");
+		//printf("la\n");
 		int mid = (low + high)/2;
 		mergeSort(arr,low,mid);
-		printf("pa\n");
+		//printf("pa\n");
 		mergeSort(arr,mid+1,high);
-			printf("papapa\n");
+		//printf("papapa\n");
 		merge(arr,low,mid,high);
-		printf("lalala\n");
+		//printf("lalala\n");
 	}
 }
 
@@ -90,7 +94,7 @@ int main(int argc, char const *argv[])
 	scanf("%d",&n);
 	int *a;
 	a = getArray(n);
-	showArray(a,n);
+	//showArray(a,n);
 
 	mergeSort(a,0,n-1);
 
