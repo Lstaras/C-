@@ -1,8 +1,10 @@
+//最小相邻数
+
 #include<stdio.h>
 #include<stdlib.h>
 
 int merge(int arr[],int low,int mid,int high){
-	int count;//
+	int count = 0;//
 	int i;
 	int j;
 	int k;
