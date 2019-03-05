@@ -9,72 +9,60 @@
 #include<stdio.h>
 
 int match(char *str){
-	char stack[1000] = "";
-	printf("stack=%s\n",stack);
+	char stack[1000];
+	int top = -1;//初始化栈
+	//printf("stack=%s\n",stack);
 	int i = 0;
-	int j = 0;
-	int mark = 1;
 	while(str[i] != '\0'){
 		if (str[i]=='(' || str[i]=='[' || str[i]=='{')
 		{
-			stack[j] = str[i];//进栈
-			j++;
-			printf("stack=%s\n",stack);
-		}else if (stack != NULL)
-		{
-			if (str[i] == ')' && stack[j-1] =='(')  
+			stack[++top] = str[i];//进栈
+			//printf("%d\n",top);
+			//printf("stack[j-1]=%c\n",stack[j-1]);
+			//printf("stack=%s\n",stack);
+		}else if (str[i]==')'){
+			if (stack[top]=='(')
 			{
-				stack[j-1] = '\0';//出栈
-				continue;
-			}else if (str[i] == ']' && stack[j-1] =='[')
-			{
-				stack[j-1] = '\0';//出栈
-				continue;
-			}else if (str[i] == '}' && stack[j-1] =='{')
-			{
-				stack[j-1] = '\0';//出栈
-				continue;
+				top--;
+				//printf("%d\n",top);
+			}else{
+				return 0;
 			}
-		}else if (stack == NULL && (str[i]==')' || str[i]==']' || str[i]=='}'))
-		{
-			return 0;
+		}else if (str[i]==']'){
+			if (stack[top]=='[')
+			{
+				top--;
+			}else{
+				return 0;
+			}
+		}else if (str[i]=='}'){
+			if (stack[top]=='{')
+			{
+				top--;
+			}else{
+				return 0;
+			}
 		}
-		// else if (str[i]==')' && (stack == NULL || stack[j-1] != '('))
-		// {
-		// 	stack[j] = '\0';
-		// 	mark = 0;
-		// 	break;//无法匹配,跳出循环
-		// }else if (str[i]==']' && (stack == NULL || stack[j-1] != '['))
-		// {
-		// 	stack[j] = '\0';
-		// 	mark = 0;
-		// 	break;//无法匹配,跳出循环
-		// }else if (str[i]=='}' && (stack == NULL || stack[j-1] != '{'))
-		// {
-		// 	stack[j] = '\0';
-		// 	mark = 0;
-		// 	break;//无法匹配,跳出循环
-		// }
 		i++;
 	}
-	if (stack[0] != '\0')
+	if (top==-1)
 	{
-		mark = 0;
+		return 1;
+	}else{
+		return 0;
 	}
-	return mark;
 }
 
 int main(int argc, char const *argv[])
 {
 	char str[] = {};
 	scanf("%s",str);
-	printf("%s\n",str);
+	//printf("%s\n",str);
 	if (match(str))
 	{
-		printf("aaaa\n");
+		printf("OK\n");
 	}else{
-		printf("bbbb\n");
+		printf("NO\n");
 	}
-	printf("%s\n",str);
 	return 0;
 }

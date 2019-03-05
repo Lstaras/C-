@@ -22,9 +22,8 @@ void showArray(int a[],int n){
 }
 
 void quickSort(int a[],int low,int high){
-	int i,j;
-	i = low;
-	j = high;
+	int i = low;
+	int j = high;
 	int temp;
 	if (i<j)
 	{

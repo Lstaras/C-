@@ -1,3 +1,5 @@
+//还没搞懂
+
 #include<stdio.h>
 #include<stdlib.h>
 

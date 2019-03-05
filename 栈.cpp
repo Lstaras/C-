@@ -1,27 +1,29 @@
 #include <stdio.h>
 #define maxSize 10
 
-//Á´Õ»½áµã
+//æ ˆç»“ç‚¹
 typedef struct LNode
 {
 	int data;
 	struct LNode *next;
 }lnode;
 
+
+
 int main()
 {
 	int x=3;
 
-	//Ë³ÐòÕ»
+	//åˆå§‹åŒ–æ ˆ
 	int stack[maxSize];
 	int top = -1;
 	
-	stack[++top] = x;//ÈëÕ»
-	x = stack[top--];//³öÕ»
+	stack[++top] = x;//è¿›æ ˆ
+	x = stack[top--];//å‡ºæ ˆ
 	
-	//Á´Õ»
+	//ÃÂ´Ã•Â»
 	LNode *lst = (LNode *)malloc(sizeof(LNode));
-	lst->next=NULL;//Õ»¿Õ
+	lst->next=NULL;//Ã•Â»Â¿Ã•
 
 
 
