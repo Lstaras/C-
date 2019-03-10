@@ -13,14 +13,56 @@
 typedef struct TNode
 {
 	char data;
-	struct TNode *next;
+	struct TNode *next[26] = {NULL};
+	int count;
 }TNode;
+
+int isExist(TNode a,char c){
+	int i = 0;
+	while(a.next[i]){
+		if(a.next[i]->data == c){
+			return i;
+		}
+		i++;
+	}
+	return -1;
+}
+
+int isNext(TNode a){
+	int i = 0;
+	while(a.next[i]){
+		i++;
+	}
+	return i;
+}
+
+int collect(char a){
+	//puts(a);
+	TNode *t;
+	t.data = 0;//根节点不定义数据
+	t.count = 0;
+	//int i = 0;
+	
+	//printf("%c\n",a[i]);
+	if (isExist(&t,a) == -1)
+	{
+		TNode *x;
+		x.data = a;
+		x.count = 0;
+		t.next[] = x;
+	}else{
+
+	}
+	return 0;
+}
 
 int main(int argc, char const *argv[])
 {
 	char a[1000]="";
 	gets(a);
-	//puts(a);
+	//
+	collect(a);
+
 
 	return 0;
 }
