@@ -14,13 +14,14 @@ int zys(int n){
 		if (n == i)
 		{
 			count++;
-			printf("%d\n",n);
+			printf("%d\n",i);
 			break;//在当前最小的因数处停止
 		}
 		if (n%i==0)
 		{
 			printf("%d*",i);//输出当前的质因数
-			++count+=zys(n/i);//递归的处理未知因数
+			count++;
+			count+=zys(n/i);//递归的处理未知因数
 			break;//出来下层后停止
 		}
 	}

@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void base2(int n) {
-    if (n == 1) {
+    if (n <= 1) {
         printf("%d", n);
     } else {
     //以下两行的顺序不能颠倒
@@ -45,7 +45,11 @@ void base16(int n){
 int main() {
     int n;
     scanf("%d", &n);
-    base8(n);//有二进制、八进制、十六进制可用
+    base2(n);//有二进制、八进制、十六进制可用
+    printf("\n");
+    base8(n);
+    printf("\n");
+    base16(n);
     printf("\n");
     return 0;
 }

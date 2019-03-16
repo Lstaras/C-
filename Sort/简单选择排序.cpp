@@ -29,20 +29,22 @@ int main(int argc, char const *argv[])
 	a = getArray(n);
 	//showArray(a,n);
 
+	//逻辑
 	int i,j;
 	for (i = 0; i < n; ++i)
 	{
-		int x;
-		int min = a[i];
+		int x = i;//x为最小值元素所在位置
+		int min = a[i];//将当前的元素当作最小值
 		for (j = i; j < n; ++j)
 		{
 			if (a[j]<min)
 			{
+				//若有更小则作为min
 				min = a[j];
 				x = j;
 			}
 		}
-		a[x] = a[i];
+		a[x] = a[i];//交换
 		a[i] = min;
 	}
 

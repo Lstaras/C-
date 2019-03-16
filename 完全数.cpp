@@ -7,7 +7,7 @@ int isPerfect(int n){
 	int i;
 	int sum = 0;
 	if (n<=0){
-		return 0;
+		return 0;//
 	}else{
 		sum = 0;
 		for (i = 1; i < n; ++i){
