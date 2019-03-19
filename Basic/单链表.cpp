@@ -6,7 +6,7 @@ typedef struct LNode
 	int data;
 	struct LNode *next;
 }lnode;
-
+	
 //´´½¨½áµã
 LNode* createNode(int data)
 {
@@ -16,7 +16,7 @@ LNode* createNode(int data)
 	return c;
 }
 
-//Á¬½ÓÒ»Ìõµ¥Á´±í(Î²²å·¨)
+//Tail
 lnode* createList1(lnode *&p,int a[],int n)
 {
 	lnode *h;//¶¨Î»Ö¸Õë
@@ -39,7 +39,7 @@ lnode* createList1(lnode *&p,int a[],int n)
 	return p;
 }
 
-//Á¬½ÓÒ»Ìõµ¥Á´±í(Í·²å·¨)
+//Head
 lnode* createList2(lnode *&p,int a[],int n)
 {
 	lnode *h;//¶¨Î»Ö¸Õë
@@ -74,7 +74,7 @@ void showList(lnode *p)
 	printf("\n");
 }
 
-//¹é²¢£¨µÝÔö£©
+//merge
 LNode* merge1(lnode *p,lnode *q)
 {
 	lnode *x = (lnode *)malloc(sizeof(lnode));
@@ -116,8 +116,8 @@ int main()
 	LNode *q;
 	
 	int a[] = {4,5,2,6,8,2,7,444};
-	createList1(p,a,8);//´øÍ·½áµãµÄµ¥Á´±í
-	createList2(q,a,8);//²»´øÍ·½ÚµãµÄµ¥Á´±í
+	createList1(p,a,8);//Tail
+	createList2(q,a,8);//Head
 
 	printf("Î²²å·¨:");
 	printf("Í·½áµãµØÖ·=0X%d\n",p);

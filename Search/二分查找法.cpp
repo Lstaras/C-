@@ -1,3 +1,5 @@
+//元素必须是有序的，如果是无序的则要先进行排序操作
+
 #include<stdio.h>
 
 int Bsearch(int a[],int low,int high,int n){
@@ -19,7 +21,7 @@ int Bsearch(int a[],int low,int high,int n){
 
 int main(int argc, char const *argv[])
 {
-	int a[] = {4,5,1,99,14,5,7,2,3,77};
+	int a[] = {0,1,2,3,4,5,6,7,8,9};
 	int n;
 	scanf("%d",&n);
 	
