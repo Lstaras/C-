@@ -32,15 +32,15 @@ void quickSort(int a[],int low,int high){
 			//用条件来移动指针，先j后i,后找小前找大
 			while(i<j && a[j]>=temp){
 				j--;
-			}
-			if (i<j)//找到某个a[j]<temp
+			}//找到某个a[j]<temp
+			if (i<j)
 			{	
 				a[i] = a[j];
 				i++;
 			}
 			while(i<j && a[i]<temp){
 				i++;
-			}
+			}//找到某个a[i]>temp
 			if (i<j)
 			{
 				a[j] = a[i];

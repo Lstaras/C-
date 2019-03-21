@@ -10,22 +10,17 @@
 #include<stdio.h>
 
 int match(char *str){
-	char stack[1000];
-	int top = -1;//初始化栈
-	//printf("stack=%s\n",stack);
+	char stack[1000];//初始化栈
+	int top = -1;//栈顶指针
 	int i = 0;
 	while(str[i] != '\0'){
 		if (str[i]=='(' || str[i]=='[' || str[i]=='{')
 		{
-			stack[++top] = str[i];//进栈
-			//printf("%d\n",top);
-			//printf("stack[j-1]=%c\n",stack[j-1]);
-			//printf("stack=%s\n",stack);
+			stack[++top] = str[i];//若为左括号则进栈
 		}else if (str[i]==')'){
 			if (stack[top]=='(')
 			{
 				top--;
-				//printf("%d\n",top);
 			}else{
 				return 0;
 			}
@@ -44,7 +39,7 @@ int match(char *str){
 				return 0;
 			}
 		}
-		i++;
+		i++;//向后遍历
 	}
 	//不管栈的具体情况，只用top来判断即可
 	if (top==-1)
@@ -58,8 +53,8 @@ int match(char *str){
 int main(int argc, char const *argv[])
 {
 	char str[] = {};
-	scanf("%s",str);
-	//printf("%s\n",str);
+	//scanf("%s",str);
+	gets(str);
 	if (match(str))
 	{
 		printf("OK\n");

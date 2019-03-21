@@ -8,14 +8,6 @@ int main(){
 	scanf("%d",&x);
 	while(x!=-1){
 		number[cnt] = x;
-		
-//		int i;
-//		printf("%d\t",cnt);
-//		for(i=0;i<=cnt;i++){
-//			printf("%d\t",number[i]);
-//		}
-//		printf("\n");
-		
 		sum += x;
 		cnt++;
 		scanf("%d",&x);
