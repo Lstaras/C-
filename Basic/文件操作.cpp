@@ -19,6 +19,13 @@
 //文件关闭
 //fclose(FILE*);
 
+//EOF---表示文字流"stream"的结尾(file或stdin)或标准输入的结尾（手动输入结束信号）
+//用法：
+//int c;
+//while ((c = fgetc(fp)) != EOF) {
+//	do something
+//}
+
 #include<stdio.h>
 
 int main(int argc, char const *argv[])
@@ -30,8 +37,11 @@ int main(int argc, char const *argv[])
 	fputs(s,fp);
 
 	char str[1024];
+	//char *strs;
+	printf("point-addr:%p\n",str);
     fgets(str,1024,fp);
-    printf("%s\n",s);
+    //printf("%p\n",str);
+    printf("content:%s\n",s);
     
 
 	return 0;
