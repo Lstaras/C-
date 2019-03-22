@@ -1,22 +1,22 @@
 //文件操作练习
 
-//文件打开
+//文件打开fopen
 //fopen("filename","mode");
 //filename:文件地址
 //mode:访问模式
 //mode:{r,w,a,r+,w+,a+}---文本文件
 //二进制文件加b
 
-//文件写入
+//文件写入fprintf
 //fprintf(FILE*,"content");
 //fputs("content",FILE*);
 
-//文件读取
+//文件读取fgrts
 //fgetc(FILE*);
 //fgets(char *缓冲区,int 读取长度,FILE*);
 //读取的长度包括结尾的0，故只读取n-1个字符
 
-//文件关闭
+//文件关闭fclose
 //fclose(FILE*);
 
 //EOF---表示文字流"stream"的结尾(file或stdin)或标准输入的结尾（手动输入结束信号）
