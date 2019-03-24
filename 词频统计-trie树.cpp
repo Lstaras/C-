@@ -19,6 +19,7 @@ typedef struct TNode
 	int count;
 }TNode;
 
+//判断字母是否在当前的结点下
 int isExist(TNode a,char c){
 	int i = 0;
 	while(a.next[i]){
@@ -27,43 +28,49 @@ int isExist(TNode a,char c){
 		}
 		i++;
 	}
-	return -1;
+	return -1;//返回元素的位置，没有匹配到则返回-1
 }
 
+//寻找下一个可连接的位置
 int isNext(TNode a){
 	int i = 0;
 	while(a.next[i]){
 		i++;
 	}
-	return i;
+	return i;//返回可供链接的下一个元素位置
 }
 
-int collect(char a){
-	//puts(a);
-	TNode *t;
-	t.data = 0;//根节点不定义数据
-	t.count = 0;
-	//int i = 0;
-	
-	//printf("%c\n",a[i]);
-	if (isExist(&t,a) == -1)
+//在t之下链接一个字母
+int collect(Tnode *t,char alphabet){
+	if (isExist(&t,alphabet) == -1)
 	{
 		TNode *x;
-		x.data = a;
+		x.data = alphabet;
 		x.count = 0;
-		t.next[] = x;
+		t.next[isNext(t);] = x;//将x链接到t
 	}else{
-
+		int i;
+		for (i = 0; i < isNext(t); ++i)
+		{
+			if (alphabet == t.next[i]->data)
+			{
+				t.next->count++;
+			}
+		}
 	}
-	return 0;
+	return 1;
 }
 
 int main(int argc, char const *argv[])
 {
-	char a[1000]="";
-	gets(a);
-	//
-	collect(a);
+	FILE *fp;
+	fp = fopen("",);//读入文件
+
+
+	TNode *t;//定义根结点
+	t.data = NULL;//根节点不定义数据
+	t.count = 0;
+
 
 
 	return 0;
