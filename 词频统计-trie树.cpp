@@ -44,10 +44,11 @@ int isNext(TNode a){
 int collect(Tnode *t,char alphabet){
 	if (isExist(&t,alphabet) == -1)
 	{
+		int i = isNext(t);
 		TNode *x;
 		x.data = alphabet;
 		x.count = 0;
-		t.next[isNext(t);] = x;//将x链接到t
+		t.next[i] = x;//将x链接到t
 	}else{
 		int i;
 		for (i = 0; i < isNext(t); ++i)
@@ -58,7 +59,7 @@ int collect(Tnode *t,char alphabet){
 			}
 		}
 	}
-	return 1;
+	return i;
 }
 
 int main(int argc, char const *argv[])

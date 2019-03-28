@@ -11,7 +11,7 @@
 //fprintf(FILE*,"content");
 //fputs("content",FILE*);
 
-//文件读取fgrts
+//文件读取fgets
 //fgetc(FILE*);
 //fgets(char *缓冲区,int 读取长度,FILE*);
 //读取的长度包括结尾的0，故只读取n-1个字符
